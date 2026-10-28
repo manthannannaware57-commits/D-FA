@@ -10,7 +10,7 @@ resources:
   - backend.yaml
   - frontend.yaml
 images:
-  - name: ghcr.io/ommundada16/pet-portal-backend
+  - name: ghcr.io/manthannannaware57-commits/pet-portal-backend
     newTag: latest
-  - name: ghcr.io/ommundada16/pet-portal-frontend
+  - name: ghcr.io/manthannannaware57-commits/pet-portal-frontend
     newTag: latest
