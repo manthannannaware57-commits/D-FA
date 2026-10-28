@@ -223,8 +223,11 @@ jobs:
           GRAFANA_ADMIN_PASSWORD: ${{ secrets.GRAFANA_ADMIN_PASSWORD }}
           REGISTRY_USER: ${{ github.actor }}
           REGISTRY_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          EC2_SSH_KEY: ${{ secrets.EC2_SSH_KEY }}
         run: |
-          echo "${{ secrets.EC2_SSH_KEY }}" > key.pem && chmod 600 key.pem
+          # Write the key with Unix line endings and a trailing newline (a key pasted from Windows has CRLF)
+          printf '%s\n' "$EC2_SSH_KEY" | tr -d '\r' > key.pem && chmod 600 key.pem
+          ssh-keygen -y -f key.pem > /dev/null || { echo "::error::EC2_SSH_KEY is not a valid private key ($(wc -l < key.pem) lines) - re-copy the whole file, including the BEGIN and END lines"; exit 1; }
           ansible-playbook -i "${EC2_HOST}," -u ubuntu --private-key key.pem ansible/deploy.yml \
             -e image_tag=${{ needs.build.outputs.tag }} \
             -e registry=${{ needs.build.outputs.registry }} \
