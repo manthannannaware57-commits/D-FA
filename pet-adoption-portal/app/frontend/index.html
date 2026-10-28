@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pet Adoption Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="index.html" class="brand">🐾 PetAdopt</a>
+        <div id="navLinks"></div>
+    </div>
+
+    <div class="hero">
+        <h1 class="page-title">Find Your New Best Friend</h1>
+        <div class="toolbar">
+            <label>Filter by species: </label>
+            <select id="speciesFilter">
+                <option value="">All</option>
+                <option value="Dog">Dog</option>
+                <option value="Cat">Cat</option>
+                <option value="Rabbit">Rabbit</option>
+                <option value="Bird">Bird</option>
+            </select>
+
+            <label style="margin-left:16px;">Adoption status: </label>
+            <select id="adoptedFilter">
+                <option value="">All</option>
+                <option value="no">Not Adopted</option>
+                <option value="yes">Adopted</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="petList" class="pet-grid"></div>
+
+    <script src="js/api.js"></script>
+    <script src="js/pets.js"></script>
+</body>
+</html>

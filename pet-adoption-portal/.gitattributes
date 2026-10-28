@@ -1,0 +1,2 @@
+# Preserve LF line endings on scripts
+*.sh text eol=lf
