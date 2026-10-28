@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: ghcr.io/ommundada16/pet-portal-frontend:latest
+          image: ghcr.io/manthannannaware57-commits/pet-portal-frontend:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80

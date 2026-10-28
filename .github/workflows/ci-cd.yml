@@ -159,10 +159,10 @@ jobs:
           cluster_name: pet-portal
       - name: Build images and load them into the cluster
         run: |
-          docker build -t ghcr.io/ommundada16/pet-portal-backend:latest app/backend
-          docker build -t ghcr.io/ommundada16/pet-portal-frontend:latest app/frontend
+          docker build -t ghcr.io/manthannannaware57-commits/pet-portal-backend:latest app/backend
+          docker build -t ghcr.io/manthannannaware57-commits/pet-portal-frontend:latest app/frontend
           kind load docker-image --name pet-portal \
-            ghcr.io/ommundada16/pet-portal-backend:latest ghcr.io/ommundada16/pet-portal-frontend:latest
+            ghcr.io/manthannannaware57-commits/pet-portal-backend:latest ghcr.io/manthannannaware57-commits/pet-portal-frontend:latest
       - name: Deploy with the manifests in k8s/
         run: ./k8s/deploy.sh
       - name: Smoke test through a port-forward

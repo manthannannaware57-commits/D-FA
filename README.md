@@ -1,6 +1,6 @@
 # 🐾 Pet Adoption Portal
 
-[![CI/CD](https://github.com/ommundada16/pet-adoption-portal/actions/workflows/ci-cd.yml/badge.svg?branch=main)](https://github.com/ommundada16/pet-adoption-portal/actions/workflows/ci-cd.yml)
+[![CI/CD](https://github.com/manthannannaware57-commits/D-FA/actions/workflows/ci-cd.yml/badge.svg?branch=main)](https://github.com/manthannannaware57-commits/D-FA/actions/workflows/ci-cd.yml)
 
 Animal shelters often struggle to connect rescued pets with adopters — listings get lost across phone calls, WhatsApp groups, and paper registers. This portal gives shelters a place to list pets and gives adopters a way to browse, request, and track adoptions in one system.
 
@@ -9,7 +9,7 @@ Animal shelters often struggle to connect rescued pets with adopters — listing
 - **FA1** (Units I–II): Git/GitHub, Docker, Docker Compose, Terraform, Ansible
 - **FA2** (Units III–IV): CI/CD pipeline, automated testing, security scanning, Kubernetes, Prometheus + Grafana monitoring, centralized logging, SRE practices
 
-**Live demo:** http://3.6.151.255 · **Grafana:** http://3.6.151.255:3000 *(fixed Elastic IP — it no longer changes when the server restarts)*
+**Live demo:** http://YOUR_EC2_PUBLIC_IP · **Grafana:** http://YOUR_EC2_PUBLIC_IP:3000 *(replace with `terraform output public_ip`)*
 
 ---
 

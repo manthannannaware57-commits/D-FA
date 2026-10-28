@@ -12,10 +12,10 @@
   become: true
 
   vars:
-    repo_url: "https://github.com/ommundada16/pet-adoption-portal.git"
+    repo_url: "https://github.com/manthannannaware57-commits/D-FA.git"
     app_dir: /home/ubuntu/pet-adoption-portal
     git_ref: main                         # the pipeline passes the exact commit being deployed
-    registry: ghcr.io/ommundada16
+    registry: ghcr.io/manthannannaware57-commits
     image_tag: latest                     # the pipeline passes the git-sha tag of the tested images
     compose_files: "-f docker-compose.yml -f docker-compose.monitoring.yml"
     mysql_root_password: "{{ lookup('env', 'MYSQL_ROOT_PASSWORD') }}"

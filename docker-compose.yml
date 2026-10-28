@@ -22,7 +22,7 @@ services:
   backend:
     build: ./app/backend
     # CI/CD builds this image, tags it with the git commit and pushes it here; the server pulls it
-    image: ${REGISTRY:-ghcr.io/ommundada16}/pet-portal-backend:${IMAGE_TAG:-latest}
+    image: ${REGISTRY:-ghcr.io/manthannannaware57-commits}/pet-portal-backend:${IMAGE_TAG:-latest}
     restart: unless-stopped
     environment:
       APP_ENV: ${APP_ENV:-development}
@@ -47,7 +47,7 @@ services:
 
   frontend:
     build: ./app/frontend
-    image: ${REGISTRY:-ghcr.io/ommundada16}/pet-portal-frontend:${IMAGE_TAG:-latest}
+    image: ${REGISTRY:-ghcr.io/manthannannaware57-commits}/pet-portal-frontend:${IMAGE_TAG:-latest}
     restart: unless-stopped
     depends_on:
       backend:

@@ -28,7 +28,7 @@ spec:
         runAsUser: 10001
       containers:
         - name: backend
-          image: ghcr.io/ommundada16/pet-portal-backend:latest
+          image: ghcr.io/manthannannaware57-commits/pet-portal-backend:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 5000
