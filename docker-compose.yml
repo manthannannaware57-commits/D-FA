@@ -13,11 +13,13 @@ services:
       - mysql_data:/var/lib/mysql
       - ./app/backend/schema.sql:/docker-entrypoint-initdb.d/schema.sql
     # Lets the backend wait until MySQL is really ready (not just started)
+    # No password in the command: a password with special characters ($ # ! & ;) breaks the shell
+    # command, and "ping" only needs the server to answer (it also succeeds on "access denied").
     healthcheck:
-      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -uroot -p$$MYSQL_ROOT_PASSWORD --silent"]
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "--silent"]
       interval: 10s
-      retries: 12
-      start_period: 40s
+      retries: 30
+      start_period: 60s
 
   backend:
     build: ./app/backend
